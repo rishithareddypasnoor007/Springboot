@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-
+#Adding comment to coomit
 @Controller
 @EnableAutoConfiguration
 public class HelloWorld{
