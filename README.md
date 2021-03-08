@@ -1,2 +1,3 @@
 Hello World!
-Spring Applications
+Spring Application
+Dockerized the application
