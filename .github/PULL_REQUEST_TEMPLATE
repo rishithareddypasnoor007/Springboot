@@ -1,23 +1,9 @@
-# Description
+##Checklist
 
-Please include a summary of the change and which issue is fixed.
-
-## Type
-- [ ] chore - simple grunt tasks (updating library, dependency, language spec, etc.)
-- [ ] feature - implementing a new feature, functionality, or redesigned thing
-- [ ] fix - fixing a bug or something that just isn't working working as it should
-- [ ] refactor - changing or cleaning existing code that doesn't change external behavior
-- [ ] sandbox - designing, prototyping, and / or testing experimental things
-- [ ] spike - massive codebase changes, usually merging develop into main
-- [ ] test - adding missing tests or refactoring tests
-
-
-## Checklist
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
 
+##Notes:
+
+Please include any summary of the commit.
