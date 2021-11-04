@@ -24,7 +24,7 @@ jobs:
           
           git checkout dev
           git fetch origin master
-          git merge master
+          git merge dev master
           
           git checkout master
           git merge --no-ff dev
