@@ -22,8 +22,8 @@ jobs:
           git config --local user.email pasnoor.rishitha@gmail.com
           git config --local user.name rishithareddypasnoor007
           
-          git fetch origin master
-          git merge origin/master
+          git checkout dev
+          git rebase master
           
           git checkout master
           git merge dev
