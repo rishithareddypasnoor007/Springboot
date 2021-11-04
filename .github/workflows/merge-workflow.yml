@@ -19,8 +19,8 @@ jobs:
       - name: Merge Console Code
         id: merge-code
         run: |
-          git config --local user.email "${{ secrets.EMAIL }}"
-          git config --local user.name "${{ secrets.USER }}"
+          git config --local user.email pasnoor.rishitha@gmail.com
+          git config --local user.name rishithareddypasnoor007
           
           echo "switch to "dev" branch if you're not already"
           git checkout dev
