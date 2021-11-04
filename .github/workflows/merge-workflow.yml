@@ -28,6 +28,7 @@ jobs:
           git checkout master
           git merge --no-ff dev
           
+          
    #       echo "switch to "dev" branch if you're not already"
    #       git checkout dev
 
@@ -35,7 +36,7 @@ jobs:
    #       git fetch origin master
 
    #       echo "To resolve any conflicts if you pushed any changes to your "master" but "dev" doesn't have that commit."
-   #       git rebase origin master
+   #       git rebase origin/master
    #       git add .
    #       git rebase --continue
    #       echo "switch to "master", which is the branch you want to be merged"
