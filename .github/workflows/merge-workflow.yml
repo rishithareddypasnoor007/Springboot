@@ -23,7 +23,7 @@ jobs:
           git config --local user.name rishithareddypasnoor007
           
           git fetch origin master
-          git merge master
+          git merge origin/master
           
           git checkout master
           git merge dev
