@@ -35,7 +35,7 @@ jobs:
   #        git checkout dev
 
   #        echo "fetching all the upstream commits made to master"
-          git fetch origin master#
+  #        git fetch origin master#
 
   #        echo "optionally, this command is being used to resolve any conflicts if you pushed any changes to your "master" but "dev" doesn't have that commit."
   #        git merge master 
