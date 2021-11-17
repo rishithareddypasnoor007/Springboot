@@ -10,68 +10,33 @@ jobs:
 
       steps:
           
-      - name: Checkout server-config repo
+      - name: Checkout repo
         uses: actions/checkout@v2
         with:
+          token: ${{ secrets.PAT }}
           ref: dev 
           fetch-depth: 0
         
       - name: Merge Console Code
         id: merge-code
         run: |
-          git config --local user.email pasnoor.rishitha@gmail.com
-          git config --local user.name rishithareddypasnoor007
+          git config --local user.email "${{ secrets.EMAIL }}"
+          git config --local user.name "${{ secrets.USER }}"
           
-          git checkout dev
-          git rebase origin/master
-          
+          echo "switch to "master", which is the branch you want to be merged"
           git checkout master
-          git merge --no-ff dev
+
+          echo "merge the dev branch into the master"
+          git merge --no-ff dev 
+
+          git push
           
-          
-   #       echo "switch to "dev" branch if you're not already"
-   #       git checkout dev
+  #        echo "switch to "dev" branch if you're not already"
+  #        git checkout dev
 
-   #       echo "fetching all the upstream commits made to master"
-   #       git fetch origin master
+  #        echo "fetching all the upstream commits made to master"
+  #        git fetch origin master#
 
-   #       echo "To resolve any conflicts if you pushed any changes to your "master" but "dev" doesn't have that commit."
-   #       git rebase origin/master
-   #       git add .
-   #       git rebase --continue
-   #       echo "switch to "master", which is the branch you want to be merged"
-   #       git checkout master
+  #        echo "optionally, this command is being used to resolve any conflicts if you pushed any changes to your "master" but "dev" doesn't have that commit."
+  #        git merge master 
 
-   #       echo "merge the dev branch into the master"
-   #       git merge --no-ff dev 
-
-   #       git push
-
-      - name: Set status check to merge code - failure
-        if: ${{ always() && steps.merge-code.outcome == 'failure' }} 
-        uses: Sibz/github-status-action@v1
-        with: 
-           authToken: ${{secrets.GITHUB_TOKEN}}
-           context: '1.Merge Code'
-           description: 'failed'
-           state: 'failure'
-           target_url: "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}?check_suite_focus=true"
-           sha: ${{github.sha}}
-
-      - name: Exit if merge code failed
-        if: ${{ always() && steps.merge-code.outcome == 'failure' }}
-        run: |
-           echo "ERROR step: Merge Console Code"
-           echo "Exiting workflow!!!"
-           exit 1 
-           
-      - name: Set status check for merge code - success
-        if: ${{ steps.merge-code.outcome == 'success' }} 
-        uses: Sibz/github-status-action@v1
-        with: 
-           authToken: ${{secrets.GITHUB_TOKEN}}
-           context: '1.Merge Code'
-           description: 'passed'
-           state: 'success'
-           target_url: "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}?check_suite_focus=true"
-           sha: ${{github.sha}}
