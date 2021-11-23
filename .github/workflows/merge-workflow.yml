@@ -27,7 +27,7 @@ jobs:
           git checkout master
 
           echo "merge the dev branch into the master"
-          git merge --no-ff dev 
+          git merge --no-ff dev -m "Merging dev to master `date` "
 
           git push
           
